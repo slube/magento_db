@@ -4417,7 +4417,7 @@ CREATE TABLE `customer_address_entity` (
   PRIMARY KEY (`entity_id`),
   KEY `FK_CUSTOMER_ADDRESS_CUSTOMER_ID` (`parent_id`),
   CONSTRAINT `FK_CUSTOMER_ADDRESS_CUSTOMER_ID` FOREIGN KEY (`parent_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=400000 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Customer Address Entities';
+) ENGINE=InnoDB AUTO_INCREMENT=400001 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Customer Address Entities';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4428,6 +4428,7 @@ LOCK TABLES `customer_address_entity` WRITE;
 /*!40000 ALTER TABLE `customer_address_entity` DISABLE KEYS */;
 INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `increment_id`, `parent_id`, `created_at`, `updated_at`, `is_active`) VALUES (1,2,0,'',1,'2013-03-06 15:21:01','2013-03-06 15:21:01',1);
 INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `increment_id`, `parent_id`, `created_at`, `updated_at`, `is_active`) VALUES (2,2,0,'',311182,'2013-03-06 15:34:11','2013-03-06 15:34:11',1);
+INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `increment_id`, `parent_id`, `created_at`, `updated_at`, `is_active`) VALUES (400000,2,0,'',910000,'2013-03-06 16:00:16','2013-03-06 16:00:16',1);
 /*!40000 ALTER TABLE `customer_address_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4554,7 +4555,7 @@ CREATE TABLE `customer_address_entity_text` (
   CONSTRAINT `FK_CUSTOMER_ADDRESS_TEXT_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_ADDRESS_TEXT_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `customer_address_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_ADDRESS_TEXT_ENTITY_TYPE` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=500000 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=500001 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4565,6 +4566,7 @@ LOCK TABLES `customer_address_entity_text` WRITE;
 /*!40000 ALTER TABLE `customer_address_entity_text` DISABLE KEYS */;
 INSERT INTO `customer_address_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (1,2,24,1,'Street Address #1\nStreet Address #2');
 INSERT INTO `customer_address_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (2,2,24,2,'Street Address #1\nStreet Address #2');
+INSERT INTO `customer_address_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (500000,2,24,400000,'Street Address #1\nStreet Address #2');
 /*!40000 ALTER TABLE `customer_address_entity_text` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4590,7 +4592,7 @@ CREATE TABLE `customer_address_entity_varchar` (
   CONSTRAINT `FK_CUSTOMER_ADDRESS_VARCHAR_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_ADDRESS_VARCHAR_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `customer_address_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_ADDRESS_VARCHAR_ENTITY_TYPE` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=600000 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=600012 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4623,6 +4625,18 @@ INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `at
 INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (22,2,29,2,'Zip/Postal Code');
 INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (23,2,30,2,'Telephone');
 INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (24,2,31,2,'Fax');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600000,2,18,400000,'Prefix');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600001,2,19,400000,'First Name');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600002,2,20,400000,'Middle Name/Initial');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600003,2,21,400000,'Last Name');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600004,2,22,400000,'Suffix');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600005,2,23,400000,'Company');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600006,2,25,400000,'City');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600007,2,26,400000,'UA');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600008,2,27,400000,'State/Province');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600009,2,29,400000,'Zip/Postal Code');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600010,2,30,400000,'Telephone');
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (600011,2,31,400000,'Fax');
 /*!40000 ALTER TABLE `customer_address_entity_varchar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4744,7 +4758,7 @@ CREATE TABLE `customer_entity` (
   KEY `FK_CUSTOMER_WEBSITE` (`website_id`),
   CONSTRAINT `FK_CUSTOMER_ENTITY_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_WEBSITE` FOREIGN KEY (`website_id`) REFERENCES `core_website` (`website_id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=910000 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Customer Entityies';
+) ENGINE=InnoDB AUTO_INCREMENT=910001 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Customer Entityies';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4755,6 +4769,7 @@ LOCK TABLES `customer_entity` WRITE;
 /*!40000 ALTER TABLE `customer_entity` DISABLE KEYS */;
 INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `website_id`, `email`, `group_id`, `increment_id`, `store_id`, `created_at`, `updated_at`, `is_active`) VALUES (1,1,0,0,'nfxpnk+test02@gmail.com',1,'',0,'2013-03-06 15:21:01','2013-03-06 15:21:01',1);
 INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `website_id`, `email`, `group_id`, `increment_id`, `store_id`, `created_at`, `updated_at`, `is_active`) VALUES (311182,1,0,1,'nfxpnk+test311182@gmail.com',1,'',0,'2013-03-06 15:34:10','2013-03-06 15:34:10',1);
+INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `website_id`, `email`, `group_id`, `increment_id`, `store_id`, `created_at`, `updated_at`, `is_active`) VALUES (910000,1,0,1,'nfxpnk+final@gmail.com',1,'',0,'2013-03-06 16:00:16','2013-03-06 16:00:16',1);
 /*!40000 ALTER TABLE `customer_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4780,7 +4795,7 @@ CREATE TABLE `customer_entity_datetime` (
   CONSTRAINT `FK_CUSTOMER_DATETIME_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_DATETIME_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_DATETIME_ENTITY_TYPE` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=700000 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=700001 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4791,6 +4806,7 @@ LOCK TABLES `customer_entity_datetime` WRITE;
 /*!40000 ALTER TABLE `customer_entity_datetime` DISABLE KEYS */;
 INSERT INTO `customer_entity_datetime` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (1,1,11,1,'1984-03-06 00:00:00');
 INSERT INTO `customer_entity_datetime` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (2,1,11,311182,'1989-03-02 00:00:00');
+INSERT INTO `customer_entity_datetime` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (700000,1,11,910000,'1984-03-01 00:00:00');
 /*!40000 ALTER TABLE `customer_entity_datetime` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4850,7 +4866,7 @@ CREATE TABLE `customer_entity_int` (
   CONSTRAINT `FK_CUSTOMER_INT_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_INT_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_INT_ENTITY_TYPE` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=800000 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=800004 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4862,6 +4878,8 @@ LOCK TABLES `customer_entity_int` WRITE;
 INSERT INTO `customer_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (1,1,32,1,1);
 INSERT INTO `customer_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (2,1,13,1,1);
 INSERT INTO `customer_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (5,1,32,311182,1);
+INSERT INTO `customer_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (800000,1,32,910000,1);
+INSERT INTO `customer_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (800001,1,13,910000,400000);
 /*!40000 ALTER TABLE `customer_entity_int` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4920,7 +4938,7 @@ CREATE TABLE `customer_entity_varchar` (
   CONSTRAINT `FK_CUSTOMER_VARCHAR_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_VARCHAR_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_VARCHAR_ENTITY_TYPE` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=900000 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=900008 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4945,6 +4963,14 @@ INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_
 INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (14,1,15,311182,'Tax/VAT Number');
 INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (15,1,12,311182,'8e9532fc55287ced2a7cb0609ecd9f02:8G');
 INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (16,1,3,311182,'Admin');
+INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (900000,1,4,910000,'Prefix');
+INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (900001,1,5,910000,'First Name');
+INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (900002,1,6,910000,'Middle Name/Initial');
+INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (900003,1,7,910000,'Last Name');
+INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (900004,1,8,910000,'Suffix');
+INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (900005,1,15,910000,'Tax/VAT Number');
+INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (900006,1,12,910000,'3bc170e7c211c8aed29aff6ca2bbad1d:of');
+INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES (900007,1,3,910000,'Admin');
 /*!40000 ALTER TABLE `customer_entity_varchar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12275,4 +12301,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-06 17:57:41
+-- Dump completed on 2013-03-06 18:00:29
