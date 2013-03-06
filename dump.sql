@@ -1,6 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `magento14` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `magento14`;
--- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.5.27, for Win32 (x86)
 --
 -- Host: localhost    Database: magento14
 -- ------------------------------------------------------
@@ -10394,4 +10392,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-06 16:42:45
+-- Dump completed on 2013-03-06 16:53:35
