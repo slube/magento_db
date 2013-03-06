@@ -4161,7 +4161,7 @@ CREATE TABLE `customer_address_entity` (
   PRIMARY KEY (`entity_id`),
   KEY `FK_CUSTOMER_ADDRESS_CUSTOMER_ID` (`parent_id`),
   CONSTRAINT `FK_CUSTOMER_ADDRESS_CUSTOMER_ID` FOREIGN KEY (`parent_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Customer Address Entities';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Customer Address Entities';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4170,6 +4170,7 @@ CREATE TABLE `customer_address_entity` (
 
 LOCK TABLES `customer_address_entity` WRITE;
 /*!40000 ALTER TABLE `customer_address_entity` DISABLE KEYS */;
+INSERT INTO `customer_address_entity` VALUES (1,2,0,'',1,'2013-03-06 14:30:45','2013-03-06 14:30:45',1);
 /*!40000 ALTER TABLE `customer_address_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4296,7 +4297,7 @@ CREATE TABLE `customer_address_entity_text` (
   CONSTRAINT `FK_CUSTOMER_ADDRESS_TEXT_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_ADDRESS_TEXT_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `customer_address_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_ADDRESS_TEXT_ENTITY_TYPE` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4305,6 +4306,7 @@ CREATE TABLE `customer_address_entity_text` (
 
 LOCK TABLES `customer_address_entity_text` WRITE;
 /*!40000 ALTER TABLE `customer_address_entity_text` DISABLE KEYS */;
+INSERT INTO `customer_address_entity_text` VALUES (1,2,24,1,'Street Address #1\nStreet Address #2');
 /*!40000 ALTER TABLE `customer_address_entity_text` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4330,7 +4332,7 @@ CREATE TABLE `customer_address_entity_varchar` (
   CONSTRAINT `FK_CUSTOMER_ADDRESS_VARCHAR_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_ADDRESS_VARCHAR_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `customer_address_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_ADDRESS_VARCHAR_ENTITY_TYPE` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4339,6 +4341,7 @@ CREATE TABLE `customer_address_entity_varchar` (
 
 LOCK TABLES `customer_address_entity_varchar` WRITE;
 /*!40000 ALTER TABLE `customer_address_entity_varchar` DISABLE KEYS */;
+INSERT INTO `customer_address_entity_varchar` VALUES (1,2,18,1,'Prefix'),(2,2,19,1,'First Name'),(3,2,20,1,'Middle Name/Initial'),(4,2,21,1,'Last Name'),(5,2,22,1,'Suffix'),(6,2,23,1,'Company'),(7,2,25,1,'City'),(8,2,26,1,'UA'),(9,2,27,1,'State/Province'),(10,2,29,1,'Zip/Postal Code'),(11,2,30,1,'Telephone'),(12,2,31,1,'Fax');
 /*!40000 ALTER TABLE `customer_address_entity_varchar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4429,7 +4432,7 @@ CREATE TABLE `customer_entity` (
   KEY `FK_CUSTOMER_WEBSITE` (`website_id`),
   CONSTRAINT `FK_CUSTOMER_ENTITY_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_WEBSITE` FOREIGN KEY (`website_id`) REFERENCES `core_website` (`website_id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Customer Entityies';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Customer Entityies';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4438,6 +4441,7 @@ CREATE TABLE `customer_entity` (
 
 LOCK TABLES `customer_entity` WRITE;
 /*!40000 ALTER TABLE `customer_entity` DISABLE KEYS */;
+INSERT INTO `customer_entity` VALUES (1,1,0,1,'nfxpnk+test01@gmail.com',1,'',0,'2013-03-06 14:30:45','2013-03-06 14:30:45',1);
 /*!40000 ALTER TABLE `customer_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4463,7 +4467,7 @@ CREATE TABLE `customer_entity_datetime` (
   CONSTRAINT `FK_CUSTOMER_DATETIME_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_DATETIME_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_DATETIME_ENTITY_TYPE` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4472,6 +4476,7 @@ CREATE TABLE `customer_entity_datetime` (
 
 LOCK TABLES `customer_entity_datetime` WRITE;
 /*!40000 ALTER TABLE `customer_entity_datetime` DISABLE KEYS */;
+INSERT INTO `customer_entity_datetime` VALUES (1,1,11,1,'1983-08-01 00:00:00');
 /*!40000 ALTER TABLE `customer_entity_datetime` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4531,7 +4536,7 @@ CREATE TABLE `customer_entity_int` (
   CONSTRAINT `FK_CUSTOMER_INT_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_INT_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_INT_ENTITY_TYPE` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4540,6 +4545,7 @@ CREATE TABLE `customer_entity_int` (
 
 LOCK TABLES `customer_entity_int` WRITE;
 /*!40000 ALTER TABLE `customer_entity_int` DISABLE KEYS */;
+INSERT INTO `customer_entity_int` VALUES (1,1,32,1,1),(2,1,13,1,1);
 /*!40000 ALTER TABLE `customer_entity_int` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4598,7 +4604,7 @@ CREATE TABLE `customer_entity_varchar` (
   CONSTRAINT `FK_CUSTOMER_VARCHAR_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_VARCHAR_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CUSTOMER_VARCHAR_ENTITY_TYPE` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4607,6 +4613,7 @@ CREATE TABLE `customer_entity_varchar` (
 
 LOCK TABLES `customer_entity_varchar` WRITE;
 /*!40000 ALTER TABLE `customer_entity_varchar` DISABLE KEYS */;
+INSERT INTO `customer_entity_varchar` VALUES (1,1,4,1,'Prefix'),(2,1,5,1,'First Name'),(3,1,6,1,'Middle Name/Initial'),(4,1,7,1,'Last Name'),(5,1,8,1,'Suffix'),(6,1,15,1,'Tax/VAT Number'),(7,1,12,1,'c6ce2bdc3ef496fffd44c5a030f721d9:qW'),(8,1,3,1,'Admin');
 /*!40000 ALTER TABLE `customer_entity_varchar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10387,4 +10394,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-06 16:26:58
+-- Dump completed on 2013-03-06 16:32:06
