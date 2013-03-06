@@ -136,7 +136,7 @@ CREATE TABLE `admin_user` (
 
 LOCK TABLES `admin_user` WRITE;
 /*!40000 ALTER TABLE `admin_user` DISABLE KEYS */;
-INSERT INTO `admin_user` VALUES (1,'Sergey','L','nfxpnk@gmail.com','admin','04cbc7627bec5d8908678ad1f22aa46f:ZI','2013-03-06 13:52:50','2013-03-06 13:52:50',NULL,0,0,1,'N;');
+INSERT INTO `admin_user` VALUES (1,'Sergey','L','nfxpnk@gmail.com','admin','04cbc7627bec5d8908678ad1f22aa46f:ZI','2013-03-06 13:52:50','2013-03-06 13:52:50','2013-03-06 14:25:26',1,0,1,'N;');
 /*!40000 ALTER TABLE `admin_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10387,4 +10387,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-06 15:55:47
+-- Dump completed on 2013-03-06 16:26:58
