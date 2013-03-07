@@ -4563,7 +4563,7 @@ INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute
 INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `increment_id`, `parent_id`, `created_at`, `updated_at`, `is_active`) VALUES (152,2,0,'',152,'2013-03-06 16:00:16','2013-03-06 16:00:16',1);
 INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `increment_id`, `parent_id`, `created_at`, `updated_at`, `is_active`) VALUES (153,2,0,'',153,'2013-03-06 16:00:16','2013-03-06 16:00:16',1);
 INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `increment_id`, `parent_id`, `created_at`, `updated_at`, `is_active`) VALUES (154,2,0,'',154,'2013-03-06 16:00:16','2013-03-06 16:00:16',1);
-INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `increment_id`, `parent_id`, `created_at`, `updated_at`, `is_active`) VALUES (155,2,0,'',155,'2013-03-06 16:00:16','2013-03-06 16:00:16',1);
+INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `increment_id`, `parent_id`, `created_at`, `updated_at`, `is_active`) VALUES (155,2,0,'',155,'2013-03-06 16:00:16','2013-03-07 09:44:06',1);
 /*!40000 ALTER TABLE `customer_address_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5576,7 +5576,7 @@ INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`
 INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `website_id`, `email`, `group_id`, `increment_id`, `store_id`, `created_at`, `updated_at`, `is_active`) VALUES (152,1,0,1,'nfxpnk+final152@gmail.com',1,'',0,'2013-03-06 16:00:16','2013-03-06 16:00:16',1);
 INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `website_id`, `email`, `group_id`, `increment_id`, `store_id`, `created_at`, `updated_at`, `is_active`) VALUES (153,1,0,1,'nfxpnk+final153@gmail.com',1,'',0,'2013-03-06 16:00:16','2013-03-06 16:00:16',1);
 INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `website_id`, `email`, `group_id`, `increment_id`, `store_id`, `created_at`, `updated_at`, `is_active`) VALUES (154,1,0,1,'nfxpnk+final154@gmail.com',1,'',0,'2013-03-06 16:00:16','2013-03-06 16:00:16',1);
-INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `website_id`, `email`, `group_id`, `increment_id`, `store_id`, `created_at`, `updated_at`, `is_active`) VALUES (155,1,0,1,'nfxpnk+final155@gmail.com',1,'',0,'2013-03-06 16:00:16','2013-03-06 16:00:16',1);
+INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `website_id`, `email`, `group_id`, `increment_id`, `store_id`, `created_at`, `updated_at`, `is_active`) VALUES (155,1,0,1,'nfxpnk+final155@gmail.com',1,'',0,'2013-03-06 16:00:16','2013-03-07 09:44:06',1);
 /*!40000 ALTER TABLE `customer_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -8733,7 +8733,7 @@ CREATE TABLE `eav_entity_store` (
   KEY `FK_eav_entity_store_store` (`store_id`),
   CONSTRAINT `FK_eav_entity_store_entity_type` FOREIGN KEY (`entity_type_id`) REFERENCES `eav_entity_type` (`entity_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_eav_entity_store_store` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -8742,6 +8742,7 @@ CREATE TABLE `eav_entity_store` (
 
 LOCK TABLES `eav_entity_store` WRITE;
 /*!40000 ALTER TABLE `eav_entity_store` DISABLE KEYS */;
+INSERT INTO `eav_entity_store` (`entity_store_id`, `entity_type_id`, `store_id`, `increment_prefix`, `increment_last_id`) VALUES (1,5,1,'1','100000001');
 /*!40000 ALTER TABLE `eav_entity_store` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9602,6 +9603,15 @@ INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (17,1,'2013-
 INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (18,1,'2013-03-07 09:41:12');
 INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (19,1,'2013-03-07 09:41:16');
 INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (20,1,'2013-03-07 09:41:22');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (21,1,'2013-03-07 09:43:51');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (22,1,'2013-03-07 09:43:53');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (23,1,'2013-03-07 09:43:54');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (24,1,'2013-03-07 09:43:58');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (25,1,'2013-03-07 09:44:00');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (26,1,'2013-03-07 09:44:03');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (27,1,'2013-03-07 09:44:04');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (28,1,'2013-03-07 09:44:11');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (29,1,'2013-03-07 09:44:13');
 /*!40000 ALTER TABLE `log_url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9617,7 +9627,7 @@ CREATE TABLE `log_url_info` (
   `url` varchar(255) NOT NULL DEFAULT '',
   `referer` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`url_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='Detale information about url visit';
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COMMENT='Detale information about url visit';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9646,6 +9656,15 @@ INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (17,'http://127.0
 INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (18,'http://127.0.0.60/index.php/checkout/cart/add/uenc/aHR0cDovLzEyNy4wLjAuNjAvaW5kZXgucGhwL3Byb2R1Y3QuaHRtbA,,/product/1/','http://127.0.0.60/index.php/product.html');
 INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (19,'http://127.0.0.60/index.php/checkout/cart/','http://127.0.0.60/index.php/product.html');
 INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (20,'http://127.0.0.60/index.php/checkout/onepage/','http://127.0.0.60/index.php/checkout/cart/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (21,'http://127.0.0.60/index.php/checkout/onepage/saveBilling/','http://127.0.0.60/index.php/checkout/onepage/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (22,'http://127.0.0.60/index.php/checkout/onepage/getAdditional/','http://127.0.0.60/index.php/checkout/onepage/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (23,'http://127.0.0.60/index.php/checkout/onepage/progress/','http://127.0.0.60/index.php/checkout/onepage/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (24,'http://127.0.0.60/index.php/checkout/onepage/saveShippingMethod/','http://127.0.0.60/index.php/checkout/onepage/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (25,'http://127.0.0.60/index.php/checkout/onepage/progress/','http://127.0.0.60/index.php/checkout/onepage/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (26,'http://127.0.0.60/index.php/checkout/onepage/savePayment/','http://127.0.0.60/index.php/checkout/onepage/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (27,'http://127.0.0.60/index.php/checkout/onepage/progress/','http://127.0.0.60/index.php/checkout/onepage/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (28,'http://127.0.0.60/index.php/checkout/onepage/saveOrder/','http://127.0.0.60/index.php/checkout/onepage/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (29,'http://127.0.0.60/index.php/checkout/onepage/success/','http://127.0.0.60/index.php/checkout/onepage/');
 /*!40000 ALTER TABLE `log_url_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9673,7 +9692,7 @@ CREATE TABLE `log_visitor` (
 
 LOCK TABLES `log_visitor` WRITE;
 /*!40000 ALTER TABLE `log_visitor` DISABLE KEYS */;
-INSERT INTO `log_visitor` (`visitor_id`, `session_id`, `first_visit_at`, `last_visit_at`, `last_url_id`, `store_id`) VALUES (1,'nltqb2bssg4g0hg615i45i1ud0','2013-03-07 09:28:25','2013-03-07 09:41:22',20,1);
+INSERT INTO `log_visitor` (`visitor_id`, `session_id`, `first_visit_at`, `last_visit_at`, `last_url_id`, `store_id`) VALUES (1,'nltqb2bssg4g0hg615i45i1ud0','2013-03-07 09:28:25','2013-03-07 09:44:13',29,1);
 /*!40000 ALTER TABLE `log_visitor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11539,7 +11558,7 @@ CREATE TABLE `sales_flat_order` (
   KEY `IDX_UPDATED_AT` (`updated_at`),
   CONSTRAINT `FK_SALES_FLAT_ORDER_CUSTOMER` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `FK_SALES_FLAT_ORDER_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11548,6 +11567,7 @@ CREATE TABLE `sales_flat_order` (
 
 LOCK TABLES `sales_flat_order` WRITE;
 /*!40000 ALTER TABLE `sales_flat_order` DISABLE KEYS */;
+INSERT INTO `sales_flat_order` (`entity_id`, `state`, `status`, `coupon_code`, `protect_code`, `shipping_description`, `is_virtual`, `store_id`, `customer_id`, `base_discount_amount`, `base_discount_canceled`, `base_discount_invoiced`, `base_discount_refunded`, `base_grand_total`, `base_shipping_amount`, `base_shipping_canceled`, `base_shipping_invoiced`, `base_shipping_refunded`, `base_shipping_tax_amount`, `base_shipping_tax_refunded`, `base_subtotal`, `base_subtotal_canceled`, `base_subtotal_invoiced`, `base_subtotal_refunded`, `base_tax_amount`, `base_tax_canceled`, `base_tax_invoiced`, `base_tax_refunded`, `base_to_global_rate`, `base_to_order_rate`, `base_total_canceled`, `base_total_invoiced`, `base_total_invoiced_cost`, `base_total_offline_refunded`, `base_total_online_refunded`, `base_total_paid`, `base_total_qty_ordered`, `base_total_refunded`, `discount_amount`, `discount_canceled`, `discount_invoiced`, `discount_refunded`, `grand_total`, `shipping_amount`, `shipping_canceled`, `shipping_invoiced`, `shipping_refunded`, `shipping_tax_amount`, `shipping_tax_refunded`, `store_to_base_rate`, `store_to_order_rate`, `subtotal`, `subtotal_canceled`, `subtotal_invoiced`, `subtotal_refunded`, `tax_amount`, `tax_canceled`, `tax_invoiced`, `tax_refunded`, `total_canceled`, `total_invoiced`, `total_offline_refunded`, `total_online_refunded`, `total_paid`, `total_qty_ordered`, `total_refunded`, `can_ship_partially`, `can_ship_partially_item`, `customer_is_guest`, `customer_note_notify`, `billing_address_id`, `customer_group_id`, `edit_increment`, `email_sent`, `forced_do_shipment_with_invoice`, `gift_message_id`, `payment_authorization_expiration`, `paypal_ipn_customer_notified`, `quote_address_id`, `quote_id`, `shipping_address_id`, `adjustment_negative`, `adjustment_positive`, `base_adjustment_negative`, `base_adjustment_positive`, `base_shipping_discount_amount`, `base_subtotal_incl_tax`, `base_total_due`, `payment_authorization_amount`, `shipping_discount_amount`, `subtotal_incl_tax`, `total_due`, `weight`, `customer_dob`, `increment_id`, `applied_rule_ids`, `base_currency_code`, `customer_email`, `customer_firstname`, `customer_lastname`, `customer_middlename`, `customer_prefix`, `customer_suffix`, `customer_taxvat`, `discount_description`, `ext_customer_id`, `ext_order_id`, `global_currency_code`, `hold_before_state`, `hold_before_status`, `order_currency_code`, `original_increment_id`, `relation_child_id`, `relation_child_real_id`, `relation_parent_id`, `relation_parent_real_id`, `remote_ip`, `shipping_method`, `store_currency_code`, `store_name`, `x_forwarded_for`, `customer_note`, `created_at`, `updated_at`, `total_item_count`, `customer_gender`, `hidden_tax_amount`, `base_hidden_tax_amount`, `shipping_hidden_tax_amount`, `base_shipping_hidden_tax_amount`, `hidden_tax_invoiced`, `base_hidden_tax_invoiced`, `hidden_tax_refunded`, `base_hidden_tax_refunded`, `shipping_incl_tax`, `base_shipping_incl_tax`) VALUES (1,'new','pending',NULL,'59df49','Flat Rate - Fixed',0,1,155,0.0000,NULL,NULL,NULL,1050.0000,50.0000,NULL,NULL,NULL,0.0000,NULL,1000.0000,NULL,NULL,NULL,0.0000,NULL,NULL,NULL,1.0000,1.0000,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0.0000,NULL,NULL,NULL,1050.0000,50.0000,NULL,NULL,NULL,0.0000,NULL,1.0000,1.0000,1000.0000,NULL,NULL,NULL,0.0000,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,10.0000,NULL,NULL,NULL,0,1,1,1,NULL,1,NULL,NULL,NULL,NULL,NULL,1,2,NULL,NULL,NULL,NULL,0.0000,1000.0000,NULL,NULL,0.0000,1000.0000,NULL,1000.0000,'1984-03-01 00:00:00','100000001','','USD','nfxpnk+final155@gmail.com','First Name','Last Name','Middle Name/Initial','Prefix','Suffix','Tax/VAT Number','',NULL,NULL,'USD',NULL,NULL,'USD',NULL,NULL,NULL,NULL,NULL,'127.0.0.1','flatrate_flatrate','USD','Main Website\nMain Website Store\nDefault Store View',NULL,NULL,'2013-03-07 09:44:06','2013-03-07 09:44:07',1,1,0.0000,0.0000,0.0000,0.0000,NULL,NULL,NULL,NULL,50.0000,50.0000);
 /*!40000 ALTER TABLE `sales_flat_order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11583,7 +11603,7 @@ CREATE TABLE `sales_flat_order_address` (
   PRIMARY KEY (`entity_id`),
   KEY `IDX_PARENT_ID` (`parent_id`),
   CONSTRAINT `FK_SALES_FLAT_ORDER_ADDRESS_PARENT` FOREIGN KEY (`parent_id`) REFERENCES `sales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11592,6 +11612,8 @@ CREATE TABLE `sales_flat_order_address` (
 
 LOCK TABLES `sales_flat_order_address` WRITE;
 /*!40000 ALTER TABLE `sales_flat_order_address` DISABLE KEYS */;
+INSERT INTO `sales_flat_order_address` (`entity_id`, `parent_id`, `customer_address_id`, `quote_address_id`, `region_id`, `customer_id`, `fax`, `region`, `postcode`, `lastname`, `street`, `city`, `email`, `telephone`, `country_id`, `firstname`, `address_type`, `prefix`, `middlename`, `suffix`, `company`) VALUES (1,1,155,NULL,NULL,155,'Fax','State/Province','Zip/Postal Code','Last Name','Street Address #1\nStreet Address #2','City','nfxpnk+final155@gmail.com','Telephone','UA','First Name','billing','Prefix','Middle Name/Initial','Suffix','Company');
+INSERT INTO `sales_flat_order_address` (`entity_id`, `parent_id`, `customer_address_id`, `quote_address_id`, `region_id`, `customer_id`, `fax`, `region`, `postcode`, `lastname`, `street`, `city`, `email`, `telephone`, `country_id`, `firstname`, `address_type`, `prefix`, `middlename`, `suffix`, `company`) VALUES (2,1,155,NULL,NULL,155,'Fax','State/Province','Zip/Postal Code','Last Name','Street Address #1\nStreet Address #2','City','nfxpnk+final155@gmail.com','Telephone','UA','First Name','shipping','Prefix','Middle Name/Initial','Suffix','Company');
 /*!40000 ALTER TABLE `sales_flat_order_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11635,7 +11657,7 @@ CREATE TABLE `sales_flat_order_grid` (
   CONSTRAINT `FK_SALES_FLAT_ORDER_GRID_CUSTOMER` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `FK_SALES_FLAT_ORDER_GRID_PARENT` FOREIGN KEY (`entity_id`) REFERENCES `sales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_SALES_FLAT_ORDER_GRID_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11644,6 +11666,7 @@ CREATE TABLE `sales_flat_order_grid` (
 
 LOCK TABLES `sales_flat_order_grid` WRITE;
 /*!40000 ALTER TABLE `sales_flat_order_grid` DISABLE KEYS */;
+INSERT INTO `sales_flat_order_grid` (`entity_id`, `status`, `store_id`, `store_name`, `customer_id`, `base_grand_total`, `base_total_paid`, `grand_total`, `total_paid`, `increment_id`, `base_currency_code`, `order_currency_code`, `shipping_name`, `billing_name`, `created_at`, `updated_at`) VALUES (1,'pending',1,'Main Website\nMain Website Store\nDefault Store View',155,1050.0000,NULL,1050.0000,NULL,'100000001','USD','USD','First Name Last Name','First Name Last Name','2013-03-07 09:44:06','2013-03-07 09:44:07');
 /*!40000 ALTER TABLE `sales_flat_order_grid` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11739,7 +11762,7 @@ CREATE TABLE `sales_flat_order_item` (
   KEY `IDX_PRODUCT_ID` (`product_id`),
   CONSTRAINT `FK_SALES_FLAT_ORDER_ITEM_PARENT` FOREIGN KEY (`order_id`) REFERENCES `sales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_SALES_FLAT_ORDER_ITEM_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11748,6 +11771,7 @@ CREATE TABLE `sales_flat_order_item` (
 
 LOCK TABLES `sales_flat_order_item` WRITE;
 /*!40000 ALTER TABLE `sales_flat_order_item` DISABLE KEYS */;
+INSERT INTO `sales_flat_order_item` (`item_id`, `order_id`, `parent_item_id`, `quote_item_id`, `store_id`, `created_at`, `updated_at`, `product_id`, `product_type`, `product_options`, `weight`, `is_virtual`, `sku`, `name`, `description`, `applied_rule_ids`, `additional_data`, `free_shipping`, `is_qty_decimal`, `no_discount`, `qty_backordered`, `qty_canceled`, `qty_invoiced`, `qty_ordered`, `qty_refunded`, `qty_shipped`, `base_cost`, `price`, `base_price`, `original_price`, `base_original_price`, `tax_percent`, `tax_amount`, `base_tax_amount`, `tax_invoiced`, `base_tax_invoiced`, `discount_percent`, `discount_amount`, `base_discount_amount`, `discount_invoiced`, `base_discount_invoiced`, `amount_refunded`, `base_amount_refunded`, `row_total`, `base_row_total`, `row_invoiced`, `base_row_invoiced`, `row_weight`, `gift_message_id`, `gift_message_available`, `base_tax_before_discount`, `tax_before_discount`, `ext_order_item_id`, `weee_tax_applied`, `weee_tax_applied_amount`, `weee_tax_applied_row_amount`, `base_weee_tax_applied_amount`, `base_weee_tax_applied_row_amount`, `weee_tax_disposition`, `weee_tax_row_disposition`, `base_weee_tax_disposition`, `base_weee_tax_row_disposition`, `locked_do_invoice`, `locked_do_ship`, `price_incl_tax`, `base_price_incl_tax`, `row_total_incl_tax`, `base_row_total_incl_tax`, `hidden_tax_amount`, `base_hidden_tax_amount`, `hidden_tax_invoiced`, `base_hidden_tax_invoiced`, `hidden_tax_refunded`, `base_hidden_tax_refunded`, `is_nominal`, `tax_canceled`, `hidden_tax_canceled`, `tax_refunded`) VALUES (1,1,NULL,1,1,'2013-03-07 09:44:06','2013-03-07 09:44:06',1,'simple','a:1:{s:15:\"info_buyRequest\";a:4:{s:4:\"uenc\";s:56:\"aHR0cDovLzEyNy4wLjAuNjAvaW5kZXgucGhwL3Byb2R1Y3QuaHRtbA,,\";s:7:\"product\";s:1:\"1\";s:15:\"related_product\";s:0:\"\";s:3:\"qty\";s:2:\"10\";}}',100.0000,0,'test','Product',NULL,'',NULL,0,0,0,NULL,0.0000,0.0000,10.0000,0.0000,0.0000,NULL,100.0000,100.0000,100.0000,100.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1000.0000,1000.0000,0.0000,0.0000,1000.0000,NULL,2,NULL,NULL,NULL,'a:0:{}',0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,NULL,NULL,100.0000,100.0000,1000.0000,1000.0000,0.0000,0.0000,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `sales_flat_order_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11823,7 +11847,7 @@ CREATE TABLE `sales_flat_order_payment` (
   PRIMARY KEY (`entity_id`),
   KEY `IDX_PARENT_ID` (`parent_id`),
   CONSTRAINT `FK_SALES_FLAT_ORDER_PAYMENT_PARENT` FOREIGN KEY (`parent_id`) REFERENCES `sales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11832,6 +11856,7 @@ CREATE TABLE `sales_flat_order_payment` (
 
 LOCK TABLES `sales_flat_order_payment` WRITE;
 /*!40000 ALTER TABLE `sales_flat_order_payment` DISABLE KEYS */;
+INSERT INTO `sales_flat_order_payment` (`entity_id`, `parent_id`, `base_shipping_captured`, `shipping_captured`, `amount_refunded`, `base_amount_paid`, `amount_canceled`, `base_amount_authorized`, `base_amount_paid_online`, `base_amount_refunded_online`, `base_shipping_amount`, `shipping_amount`, `amount_paid`, `amount_authorized`, `base_amount_ordered`, `base_shipping_refunded`, `shipping_refunded`, `base_amount_refunded`, `amount_ordered`, `base_amount_canceled`, `ideal_transaction_checked`, `quote_payment_id`, `additional_data`, `cc_exp_month`, `cc_ss_start_year`, `echeck_bank_name`, `method`, `cc_debug_request_body`, `cc_secure_verify`, `cybersource_token`, `ideal_issuer_title`, `protection_eligibility`, `cc_approval`, `cc_last4`, `cc_status_description`, `echeck_type`, `paybox_question_number`, `cc_debug_response_serialized`, `cc_ss_start_month`, `echeck_account_type`, `last_trans_id`, `cc_cid_status`, `cc_owner`, `cc_type`, `ideal_issuer_id`, `po_number`, `cc_exp_year`, `cc_status`, `echeck_routing_number`, `account_status`, `anet_trans_method`, `cc_debug_response_body`, `cc_ss_issue`, `echeck_account_name`, `cc_avs_status`, `cc_number_enc`, `cc_trans_id`, `flo2cash_account_id`, `paybox_request_number`, `address_status`, `additional_information`) VALUES (1,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50.0000,50.0000,NULL,NULL,1050.0000,NULL,NULL,NULL,1050.0000,NULL,NULL,NULL,NULL,'0','0',NULL,'checkmo',NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,'0',NULL,NULL,NULL,'','',NULL,'','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `sales_flat_order_payment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11854,7 +11879,7 @@ CREATE TABLE `sales_flat_order_status_history` (
   KEY `IDX_PARENT_ID` (`parent_id`),
   KEY `IDX_CREATED_AT` (`created_at`),
   CONSTRAINT `FK_SALES_FLAT_ORDER_STATUS_HISTORY_PARENT` FOREIGN KEY (`parent_id`) REFERENCES `sales_flat_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11863,6 +11888,7 @@ CREATE TABLE `sales_flat_order_status_history` (
 
 LOCK TABLES `sales_flat_order_status_history` WRITE;
 /*!40000 ALTER TABLE `sales_flat_order_status_history` DISABLE KEYS */;
+INSERT INTO `sales_flat_order_status_history` (`entity_id`, `parent_id`, `is_customer_notified`, `is_visible_on_front`, `comment`, `status`, `created_at`) VALUES (1,1,1,0,NULL,'pending','2013-03-07 09:44:07');
 /*!40000 ALTER TABLE `sales_flat_order_status_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11938,7 +11964,7 @@ CREATE TABLE `sales_flat_quote` (
 
 LOCK TABLES `sales_flat_quote` WRITE;
 /*!40000 ALTER TABLE `sales_flat_quote` DISABLE KEYS */;
-INSERT INTO `sales_flat_quote` (`entity_id`, `store_id`, `created_at`, `updated_at`, `converted_at`, `is_active`, `is_virtual`, `is_multi_shipping`, `items_count`, `items_qty`, `orig_order_id`, `store_to_base_rate`, `store_to_quote_rate`, `base_currency_code`, `store_currency_code`, `quote_currency_code`, `grand_total`, `base_grand_total`, `checkout_method`, `customer_id`, `customer_tax_class_id`, `customer_group_id`, `customer_email`, `customer_prefix`, `customer_firstname`, `customer_middlename`, `customer_lastname`, `customer_suffix`, `customer_dob`, `customer_note`, `customer_note_notify`, `customer_is_guest`, `remote_ip`, `applied_rule_ids`, `reserved_order_id`, `password_hash`, `coupon_code`, `global_currency_code`, `base_to_global_rate`, `base_to_quote_rate`, `customer_taxvat`, `customer_gender`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `is_changed`, `trigger_recollect`, `ext_shipping_info`, `gift_message_id`) VALUES (1,1,'2013-03-07 09:29:41','2013-03-07 09:41:21','0000-00-00 00:00:00',1,0,0,1,10.0000,0,1.0000,1.0000,'USD','USD','USD',1000.0000,1000.0000,'',155,3,1,'nfxpnk+final155@gmail.com','Prefix','First Name','Middle Name/Initial','Last Name','Suffix','1984-03-01 00:00:00',NULL,1,0,'127.0.0.1','','',NULL,NULL,'USD',1.0000,1.0000,'Tax/VAT Number','1',1000.0000,1000.0000,1000.0000,1000.0000,1,0,NULL,NULL);
+INSERT INTO `sales_flat_quote` (`entity_id`, `store_id`, `created_at`, `updated_at`, `converted_at`, `is_active`, `is_virtual`, `is_multi_shipping`, `items_count`, `items_qty`, `orig_order_id`, `store_to_base_rate`, `store_to_quote_rate`, `base_currency_code`, `store_currency_code`, `quote_currency_code`, `grand_total`, `base_grand_total`, `checkout_method`, `customer_id`, `customer_tax_class_id`, `customer_group_id`, `customer_email`, `customer_prefix`, `customer_firstname`, `customer_middlename`, `customer_lastname`, `customer_suffix`, `customer_dob`, `customer_note`, `customer_note_notify`, `customer_is_guest`, `remote_ip`, `applied_rule_ids`, `reserved_order_id`, `password_hash`, `coupon_code`, `global_currency_code`, `base_to_global_rate`, `base_to_quote_rate`, `customer_taxvat`, `customer_gender`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `is_changed`, `trigger_recollect`, `ext_shipping_info`, `gift_message_id`) VALUES (1,1,'2013-03-07 09:29:41','2013-03-07 09:44:11','0000-00-00 00:00:00',0,0,0,1,10.0000,0,1.0000,1.0000,'USD','USD','USD',1050.0000,1050.0000,'',155,3,1,'nfxpnk+final155@gmail.com','Prefix','First Name','Middle Name/Initial','Last Name','Suffix','1984-03-01 00:00:00',NULL,1,0,'127.0.0.1','','100000001',NULL,NULL,'USD',1.0000,1.0000,'Tax/VAT Number','1',1000.0000,1000.0000,1000.0000,1000.0000,1,0,NULL,NULL);
 /*!40000 ALTER TABLE `sales_flat_quote` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12019,8 +12045,8 @@ CREATE TABLE `sales_flat_quote_address` (
 
 LOCK TABLES `sales_flat_quote_address` WRITE;
 /*!40000 ALTER TABLE `sales_flat_quote_address` DISABLE KEYS */;
-INSERT INTO `sales_flat_quote_address` (`address_id`, `quote_id`, `created_at`, `updated_at`, `customer_id`, `save_in_address_book`, `customer_address_id`, `address_type`, `email`, `prefix`, `firstname`, `middlename`, `lastname`, `suffix`, `company`, `street`, `city`, `region`, `region_id`, `postcode`, `country_id`, `telephone`, `fax`, `same_as_billing`, `free_shipping`, `collect_shipping_rates`, `shipping_method`, `shipping_description`, `weight`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `tax_amount`, `base_tax_amount`, `shipping_amount`, `base_shipping_amount`, `shipping_tax_amount`, `base_shipping_tax_amount`, `discount_amount`, `base_discount_amount`, `grand_total`, `base_grand_total`, `customer_notes`, `applied_taxes`, `discount_description`, `shipping_discount_amount`, `base_shipping_discount_amount`, `subtotal_incl_tax`, `base_subtotal_total_incl_tax`, `gift_message_id`, `hidden_tax_amount`, `base_hidden_tax_amount`, `shipping_hidden_tax_amount`, `base_shipping_hidden_tax_amount`, `shipping_incl_tax`, `base_shipping_incl_tax`) VALUES (3,1,'2013-03-07 09:41:14','2013-03-07 09:41:21',155,0,155,'billing','nfxpnk+final155@gmail.com','Prefix','First Name','Middle Name/Initial','Last Name','Suffix','Company','Street Address #1\nStreet Address #2','City','State/Province',NULL,'Zip/Postal Code','UA','Telephone','Fax',0,0,0,'','',0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,NULL,'a:0:{}',NULL,NULL,NULL,0.0000,NULL,NULL,NULL,NULL,NULL,NULL,0.0000,0.0000);
-INSERT INTO `sales_flat_quote_address` (`address_id`, `quote_id`, `created_at`, `updated_at`, `customer_id`, `save_in_address_book`, `customer_address_id`, `address_type`, `email`, `prefix`, `firstname`, `middlename`, `lastname`, `suffix`, `company`, `street`, `city`, `region`, `region_id`, `postcode`, `country_id`, `telephone`, `fax`, `same_as_billing`, `free_shipping`, `collect_shipping_rates`, `shipping_method`, `shipping_description`, `weight`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `tax_amount`, `base_tax_amount`, `shipping_amount`, `base_shipping_amount`, `shipping_tax_amount`, `base_shipping_tax_amount`, `discount_amount`, `base_discount_amount`, `grand_total`, `base_grand_total`, `customer_notes`, `applied_taxes`, `discount_description`, `shipping_discount_amount`, `base_shipping_discount_amount`, `subtotal_incl_tax`, `base_subtotal_total_incl_tax`, `gift_message_id`, `hidden_tax_amount`, `base_hidden_tax_amount`, `shipping_hidden_tax_amount`, `base_shipping_hidden_tax_amount`, `shipping_incl_tax`, `base_shipping_incl_tax`) VALUES (4,1,'2013-03-07 09:41:14','2013-03-07 09:41:21',155,0,NULL,'shipping',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,'','',1000.0000,1000.0000,1000.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1000.0000,1000.0000,NULL,'a:0:{}','',0.0000,0.0000,1000.0000,NULL,NULL,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000);
+INSERT INTO `sales_flat_quote_address` (`address_id`, `quote_id`, `created_at`, `updated_at`, `customer_id`, `save_in_address_book`, `customer_address_id`, `address_type`, `email`, `prefix`, `firstname`, `middlename`, `lastname`, `suffix`, `company`, `street`, `city`, `region`, `region_id`, `postcode`, `country_id`, `telephone`, `fax`, `same_as_billing`, `free_shipping`, `collect_shipping_rates`, `shipping_method`, `shipping_description`, `weight`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `tax_amount`, `base_tax_amount`, `shipping_amount`, `base_shipping_amount`, `shipping_tax_amount`, `base_shipping_tax_amount`, `discount_amount`, `base_discount_amount`, `grand_total`, `base_grand_total`, `customer_notes`, `applied_taxes`, `discount_description`, `shipping_discount_amount`, `base_shipping_discount_amount`, `subtotal_incl_tax`, `base_subtotal_total_incl_tax`, `gift_message_id`, `hidden_tax_amount`, `base_hidden_tax_amount`, `shipping_hidden_tax_amount`, `base_shipping_hidden_tax_amount`, `shipping_incl_tax`, `base_shipping_incl_tax`) VALUES (3,1,'2013-03-07 09:41:14','2013-03-07 09:44:06',155,0,155,'billing','nfxpnk+final155@gmail.com','Prefix','First Name','Middle Name/Initial','Last Name','Suffix','Company','Street Address #1\nStreet Address #2','City','State/Province',NULL,'Zip/Postal Code','UA','Telephone','Fax',0,0,0,'','',0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,NULL,'a:0:{}',NULL,NULL,NULL,0.0000,NULL,NULL,NULL,NULL,NULL,NULL,0.0000,0.0000);
+INSERT INTO `sales_flat_quote_address` (`address_id`, `quote_id`, `created_at`, `updated_at`, `customer_id`, `save_in_address_book`, `customer_address_id`, `address_type`, `email`, `prefix`, `firstname`, `middlename`, `lastname`, `suffix`, `company`, `street`, `city`, `region`, `region_id`, `postcode`, `country_id`, `telephone`, `fax`, `same_as_billing`, `free_shipping`, `collect_shipping_rates`, `shipping_method`, `shipping_description`, `weight`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `tax_amount`, `base_tax_amount`, `shipping_amount`, `base_shipping_amount`, `shipping_tax_amount`, `base_shipping_tax_amount`, `discount_amount`, `base_discount_amount`, `grand_total`, `base_grand_total`, `customer_notes`, `applied_taxes`, `discount_description`, `shipping_discount_amount`, `base_shipping_discount_amount`, `subtotal_incl_tax`, `base_subtotal_total_incl_tax`, `gift_message_id`, `hidden_tax_amount`, `base_hidden_tax_amount`, `shipping_hidden_tax_amount`, `base_shipping_hidden_tax_amount`, `shipping_incl_tax`, `base_shipping_incl_tax`) VALUES (4,1,'2013-03-07 09:41:14','2013-03-07 09:44:06',155,0,155,'shipping','nfxpnk+final155@gmail.com','Prefix','First Name','Middle Name/Initial','Last Name','Suffix','Company','Street Address #1\nStreet Address #2','City','State/Province',NULL,'Zip/Postal Code','UA','Telephone','Fax',1,0,0,'flatrate_flatrate','Flat Rate - Fixed',1000.0000,1000.0000,1000.0000,0.0000,0.0000,0.0000,0.0000,50.0000,50.0000,0.0000,0.0000,0.0000,0.0000,1050.0000,1050.0000,NULL,'a:0:{}','',0.0000,0.0000,1000.0000,NULL,NULL,0.0000,0.0000,0.0000,0.0000,50.0000,50.0000);
 /*!40000 ALTER TABLE `sales_flat_quote_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12248,7 +12274,7 @@ CREATE TABLE `sales_flat_quote_payment` (
 
 LOCK TABLES `sales_flat_quote_payment` WRITE;
 /*!40000 ALTER TABLE `sales_flat_quote_payment` DISABLE KEYS */;
-INSERT INTO `sales_flat_quote_payment` (`payment_id`, `quote_id`, `created_at`, `updated_at`, `method`, `cc_type`, `cc_number_enc`, `cc_last4`, `cc_cid_enc`, `cc_owner`, `cc_exp_month`, `cc_exp_year`, `cc_ss_owner`, `cc_ss_start_month`, `cc_ss_start_year`, `cybersource_token`, `paypal_correlation_id`, `paypal_payer_id`, `paypal_payer_status`, `po_number`, `additional_data`, `cc_ss_issue`, `additional_information`, `ideal_issuer_id`, `ideal_issuer_list`) VALUES (1,1,'2013-03-07 09:41:21','2013-03-07 09:41:21','','','','','','',0,0,'',0,0,'','','','','',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `sales_flat_quote_payment` (`payment_id`, `quote_id`, `created_at`, `updated_at`, `method`, `cc_type`, `cc_number_enc`, `cc_last4`, `cc_cid_enc`, `cc_owner`, `cc_exp_month`, `cc_exp_year`, `cc_ss_owner`, `cc_ss_start_month`, `cc_ss_start_year`, `cybersource_token`, `paypal_correlation_id`, `paypal_payer_id`, `paypal_payer_status`, `po_number`, `additional_data`, `cc_ss_issue`, `additional_information`, `ideal_issuer_id`, `ideal_issuer_list`) VALUES (1,1,'2013-03-07 09:41:21','2013-03-07 09:44:06','checkmo','','','','','',0,0,'',0,0,'','','','','',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `sales_flat_quote_payment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12275,7 +12301,7 @@ CREATE TABLE `sales_flat_quote_shipping_rate` (
   PRIMARY KEY (`rate_id`),
   KEY `FK_SALES_QUOTE_SHIPPING_RATE_ADDRESS` (`address_id`),
   CONSTRAINT `FK_SALES_QUOTE_SHIPPING_RATE_ADDRESS` FOREIGN KEY (`address_id`) REFERENCES `sales_flat_quote_address` (`address_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12284,6 +12310,7 @@ CREATE TABLE `sales_flat_quote_shipping_rate` (
 
 LOCK TABLES `sales_flat_quote_shipping_rate` WRITE;
 /*!40000 ALTER TABLE `sales_flat_quote_shipping_rate` DISABLE KEYS */;
+INSERT INTO `sales_flat_quote_shipping_rate` (`rate_id`, `address_id`, `created_at`, `updated_at`, `carrier`, `carrier_title`, `code`, `method`, `method_description`, `price`, `error_message`, `method_title`) VALUES (2,4,'2013-03-07 09:44:02','2013-03-07 09:44:06','flatrate','Flat Rate','flatrate_flatrate','flatrate',NULL,50.0000,NULL,'Fixed');
 /*!40000 ALTER TABLE `sales_flat_quote_shipping_rate` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -13714,4 +13741,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-07 11:43:34
+-- Dump completed on 2013-03-07 11:44:41
