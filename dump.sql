@@ -498,7 +498,7 @@ CREATE TABLE `catalog_category_entity` (
   `children_count` int(11) NOT NULL,
   PRIMARY KEY (`entity_id`),
   KEY `IDX_LEVEL` (`level`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Category Entities';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Category Entities';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -507,8 +507,9 @@ CREATE TABLE `catalog_category_entity` (
 
 LOCK TABLES `catalog_category_entity` WRITE;
 /*!40000 ALTER TABLE `catalog_category_entity` DISABLE KEYS */;
-INSERT INTO `catalog_category_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `parent_id`, `created_at`, `updated_at`, `path`, `position`, `level`, `children_count`) VALUES (1,3,0,0,'0000-00-00 00:00:00','2013-03-06 13:43:36','1',0,0,1);
-INSERT INTO `catalog_category_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `parent_id`, `created_at`, `updated_at`, `path`, `position`, `level`, `children_count`) VALUES (2,3,3,1,'2013-03-06 13:43:36','2013-03-06 13:43:36','1/2',1,1,0);
+INSERT INTO `catalog_category_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `parent_id`, `created_at`, `updated_at`, `path`, `position`, `level`, `children_count`) VALUES (1,3,0,0,'0000-00-00 00:00:00','2013-03-06 13:43:36','1',0,0,2);
+INSERT INTO `catalog_category_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `parent_id`, `created_at`, `updated_at`, `path`, `position`, `level`, `children_count`) VALUES (2,3,3,1,'2013-03-06 13:43:36','2013-03-07 09:35:35','1/2',1,1,0);
+INSERT INTO `catalog_category_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `parent_id`, `created_at`, `updated_at`, `path`, `position`, `level`, `children_count`) VALUES (3,3,3,1,'2013-03-07 09:37:13','2013-03-07 09:37:13','1/3',2,1,0);
 /*!40000 ALTER TABLE `catalog_category_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -534,7 +535,7 @@ CREATE TABLE `catalog_category_entity_datetime` (
   CONSTRAINT `FK_CATALOG_CATEGORY_ENTITY_DATETIME_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_CATEGORY_ENTITY_DATETIME_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `catalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_CATEGORY_ENTITY_DATETIME_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -543,6 +544,10 @@ CREATE TABLE `catalog_category_entity_datetime` (
 
 LOCK TABLES `catalog_category_entity_datetime` WRITE;
 /*!40000 ALTER TABLE `catalog_category_entity_datetime` DISABLE KEYS */;
+INSERT INTO `catalog_category_entity_datetime` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (1,3,52,0,2,NULL);
+INSERT INTO `catalog_category_entity_datetime` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (2,3,53,0,2,NULL);
+INSERT INTO `catalog_category_entity_datetime` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (3,3,52,0,3,NULL);
+INSERT INTO `catalog_category_entity_datetime` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (4,3,53,0,3,NULL);
 /*!40000 ALTER TABLE `catalog_category_entity_datetime` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -602,7 +607,7 @@ CREATE TABLE `catalog_category_entity_int` (
   CONSTRAINT `FK_CATALOG_CATEGORY_EMTITY_INT_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_CATEGORY_EMTITY_INT_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `catalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_CATEGORY_EMTITY_INT_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -615,6 +620,17 @@ INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attrib
 INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (2,3,34,1,2,1);
 INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (3,3,105,0,1,1);
 INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (4,3,105,0,2,1);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (6,3,42,0,2,5);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (7,3,43,0,2,1);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (8,3,107,0,2,0);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (9,3,108,0,2,NULL);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (10,3,34,0,3,1);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (11,3,105,0,3,1);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (12,3,42,0,3,NULL);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (13,3,43,0,3,0);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (14,3,106,0,3,0);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (15,3,107,0,3,0);
+INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (16,3,108,0,3,NULL);
 /*!40000 ALTER TABLE `catalog_category_entity_int` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -640,7 +656,7 @@ CREATE TABLE `catalog_category_entity_text` (
   CONSTRAINT `FK_CATALOG_CATEGORY_ENTITY_TEXT_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_CATEGORY_ENTITY_TEXT_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `catalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_CATEGORY_ENTITY_TEXT_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -653,6 +669,15 @@ INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attri
 INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (2,3,58,1,1,'');
 INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (3,3,58,0,2,'');
 INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (4,3,58,1,2,'');
+INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (5,3,36,0,2,'');
+INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (6,3,39,0,2,'');
+INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (7,3,40,0,2,'');
+INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (8,3,55,0,2,'');
+INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (9,3,36,0,3,'test');
+INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (10,3,39,0,3,'');
+INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (11,3,40,0,3,'');
+INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (12,3,55,0,3,'');
+INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (13,3,58,0,3,'');
 /*!40000 ALTER TABLE `catalog_category_entity_text` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -678,7 +703,7 @@ CREATE TABLE `catalog_category_entity_varchar` (
   CONSTRAINT `FK_CATALOG_CATEGORY_ENTITY_VARCHAR_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_CATEGORY_ENTITY_VARCHAR_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `catalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_CATEGORY_ENTITY_VARCHAR_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -694,6 +719,15 @@ INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `at
 INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (5,3,33,1,2,'Default Category');
 INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (6,3,41,1,2,'PRODUCTS');
 INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (7,3,35,0,2,'default-category');
+INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (8,3,38,0,2,'');
+INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (9,3,50,0,2,'');
+INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (10,3,54,0,2,'');
+INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (11,3,33,0,3,'test');
+INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (12,3,35,0,3,'test');
+INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (13,3,38,0,3,'');
+INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (14,3,41,0,3,'PRODUCTS');
+INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (15,3,50,0,3,'');
+INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (16,3,54,0,3,'');
 /*!40000 ALTER TABLE `catalog_category_entity_varchar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -722,6 +756,8 @@ CREATE TABLE `catalog_category_product` (
 
 LOCK TABLES `catalog_category_product` WRITE;
 /*!40000 ALTER TABLE `catalog_category_product` DISABLE KEYS */;
+INSERT INTO `catalog_category_product` (`category_id`, `product_id`, `position`) VALUES (2,1,1);
+INSERT INTO `catalog_category_product` (`category_id`, `product_id`, `position`) VALUES (3,1,0);
 /*!40000 ALTER TABLE `catalog_category_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -755,7 +791,7 @@ CREATE TABLE `catalog_category_product_index` (
 
 LOCK TABLES `catalog_category_product_index` WRITE;
 /*!40000 ALTER TABLE `catalog_category_product_index` DISABLE KEYS */;
-INSERT INTO `catalog_category_product_index` (`category_id`, `product_id`, `position`, `is_parent`, `store_id`, `visibility`) VALUES (2,1,0,0,1,4);
+INSERT INTO `catalog_category_product_index` (`category_id`, `product_id`, `position`, `is_parent`, `store_id`, `visibility`) VALUES (2,1,1,1,1,4);
 /*!40000 ALTER TABLE `catalog_category_product_index` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1257,7 +1293,7 @@ CREATE TABLE `catalog_product_entity` (
 
 LOCK TABLES `catalog_product_entity` WRITE;
 /*!40000 ALTER TABLE `catalog_product_entity` DISABLE KEYS */;
-INSERT INTO `catalog_product_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `type_id`, `sku`, `has_options`, `required_options`, `created_at`, `updated_at`) VALUES (1,4,4,'simple','test',0,0,'2013-03-07 09:31:02','2013-03-07 09:31:02');
+INSERT INTO `catalog_product_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `type_id`, `sku`, `has_options`, `required_options`, `created_at`, `updated_at`) VALUES (1,4,4,'simple','test',0,0,'2013-03-07 09:31:02','2013-03-07 09:40:56');
 /*!40000 ALTER TABLE `catalog_product_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1323,7 +1359,7 @@ CREATE TABLE `catalog_product_entity_decimal` (
   CONSTRAINT `FK_CATALOG_PROD_ENTITY_DECIMAL_PROD_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `catalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_PRODUCT_ENTITY_DECIMAL_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_PRODUCT_ENTITY_DECIMAL_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1567,7 +1603,7 @@ CREATE TABLE `catalog_product_entity_varchar` (
   CONSTRAINT `FK_CATALOG_PROD_ENTITY_VARCHAR_PROD_ENTITY` FOREIGN KEY (`entity_id`) REFERENCES `catalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_PRODUCT_ENTITY_VARCHAR_ATTRIBUTE` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CATALOG_PRODUCT_ENTITY_VARCHAR_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1587,6 +1623,8 @@ INSERT INTO `catalog_product_entity_varchar` (`value_id`, `entity_type_id`, `att
 INSERT INTO `catalog_product_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (9,4,92,0,1,'');
 INSERT INTO `catalog_product_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (10,4,96,0,1,'');
 INSERT INTO `catalog_product_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (11,4,97,0,1,'container2');
+INSERT INTO `catalog_product_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (12,4,87,1,1,'product.html');
+INSERT INTO `catalog_product_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES (13,4,87,0,1,'product.html');
 /*!40000 ALTER TABLE `catalog_product_entity_varchar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1619,6 +1657,7 @@ CREATE TABLE `catalog_product_index_eav` (
 
 LOCK TABLES `catalog_product_index_eav` WRITE;
 /*!40000 ALTER TABLE `catalog_product_index_eav` DISABLE KEYS */;
+INSERT INTO `catalog_product_index_eav` (`entity_id`, `attribute_id`, `store_id`, `value`) VALUES (1,85,1,0);
 /*!40000 ALTER TABLE `catalog_product_index_eav` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1767,6 +1806,7 @@ CREATE TABLE `catalog_product_index_eav_tmp` (
 
 LOCK TABLES `catalog_product_index_eav_tmp` WRITE;
 /*!40000 ALTER TABLE `catalog_product_index_eav_tmp` DISABLE KEYS */;
+INSERT INTO `catalog_product_index_eav_tmp` (`entity_id`, `attribute_id`, `store_id`, `value`) VALUES (1,85,1,0);
 /*!40000 ALTER TABLE `catalog_product_index_eav_tmp` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1803,6 +1843,10 @@ CREATE TABLE `catalog_product_index_price` (
 
 LOCK TABLES `catalog_product_index_price` WRITE;
 /*!40000 ALTER TABLE `catalog_product_index_price` DISABLE KEYS */;
+INSERT INTO `catalog_product_index_price` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES (1,0,1,0,100.0000,100.0000,100.0000,100.0000,NULL);
+INSERT INTO `catalog_product_index_price` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES (1,1,1,0,100.0000,100.0000,100.0000,100.0000,NULL);
+INSERT INTO `catalog_product_index_price` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES (1,2,1,0,100.0000,100.0000,100.0000,100.0000,NULL);
+INSERT INTO `catalog_product_index_price` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES (1,3,1,0,100.0000,100.0000,100.0000,100.0000,NULL);
 /*!40000 ALTER TABLE `catalog_product_index_price` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2246,6 +2290,10 @@ CREATE TABLE `catalog_product_index_price_idx` (
 
 LOCK TABLES `catalog_product_index_price_idx` WRITE;
 /*!40000 ALTER TABLE `catalog_product_index_price_idx` DISABLE KEYS */;
+INSERT INTO `catalog_product_index_price_idx` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES (1,0,1,0,100.0000,100.0000,100.0000,100.0000,NULL);
+INSERT INTO `catalog_product_index_price_idx` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES (1,1,1,0,100.0000,100.0000,100.0000,100.0000,NULL);
+INSERT INTO `catalog_product_index_price_idx` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES (1,2,1,0,100.0000,100.0000,100.0000,100.0000,NULL);
+INSERT INTO `catalog_product_index_price_idx` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES (1,3,1,0,100.0000,100.0000,100.0000,100.0000,NULL);
 /*!40000 ALTER TABLE `catalog_product_index_price_idx` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3237,7 +3285,7 @@ CREATE TABLE `cataloginventory_stock_item` (
 
 LOCK TABLES `cataloginventory_stock_item` WRITE;
 /*!40000 ALTER TABLE `cataloginventory_stock_item` DISABLE KEYS */;
-INSERT INTO `cataloginventory_stock_item` (`item_id`, `product_id`, `stock_id`, `qty`, `min_qty`, `use_config_min_qty`, `is_qty_decimal`, `backorders`, `use_config_backorders`, `min_sale_qty`, `use_config_min_sale_qty`, `max_sale_qty`, `use_config_max_sale_qty`, `is_in_stock`, `low_stock_date`, `notify_stock_qty`, `use_config_notify_stock_qty`, `manage_stock`, `use_config_manage_stock`, `stock_status_changed_automatically`, `use_config_qty_increments`, `qty_increments`, `use_config_enable_qty_increments`, `enable_qty_increments`) VALUES (1,1,1,0.0000,0.0000,1,0,0,1,1.0000,1,0.0000,1,0,'2013-03-07 09:31:02',NULL,1,0,1,1,1,0.0000,1,0);
+INSERT INTO `cataloginventory_stock_item` (`item_id`, `product_id`, `stock_id`, `qty`, `min_qty`, `use_config_min_qty`, `is_qty_decimal`, `backorders`, `use_config_backorders`, `min_sale_qty`, `use_config_min_sale_qty`, `max_sale_qty`, `use_config_max_sale_qty`, `is_in_stock`, `low_stock_date`, `notify_stock_qty`, `use_config_notify_stock_qty`, `manage_stock`, `use_config_manage_stock`, `stock_status_changed_automatically`, `use_config_qty_increments`, `qty_increments`, `use_config_enable_qty_increments`, `enable_qty_increments`) VALUES (1,1,1,9999999.0000,0.0000,1,0,0,1,1.0000,1,0.0000,1,0,NULL,NULL,1,0,0,0,1,0.0000,1,0);
 /*!40000 ALTER TABLE `cataloginventory_stock_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3269,7 +3317,7 @@ CREATE TABLE `cataloginventory_stock_status` (
 
 LOCK TABLES `cataloginventory_stock_status` WRITE;
 /*!40000 ALTER TABLE `cataloginventory_stock_status` DISABLE KEYS */;
-INSERT INTO `cataloginventory_stock_status` (`product_id`, `website_id`, `stock_id`, `qty`, `stock_status`) VALUES (1,1,1,0.0000,0);
+INSERT INTO `cataloginventory_stock_status` (`product_id`, `website_id`, `stock_id`, `qty`, `stock_status`) VALUES (1,1,1,9999999.0000,1);
 /*!40000 ALTER TABLE `cataloginventory_stock_status` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3518,7 +3566,7 @@ CREATE TABLE `catalogsearch_fulltext` (
 
 LOCK TABLES `catalogsearch_fulltext` WRITE;
 /*!40000 ALTER TABLE `catalogsearch_fulltext` DISABLE KEYS */;
-INSERT INTO `catalogsearch_fulltext` (`product_id`, `store_id`, `data_index`) VALUES (1,1,'test|Enabled|None|Product|test|test|100|0');
+INSERT INTO `catalogsearch_fulltext` (`product_id`, `store_id`, `data_index`) VALUES (1,1,'test|Enabled|None|Product|test|test|100|1');
 /*!40000 ALTER TABLE `catalogsearch_fulltext` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4236,7 +4284,7 @@ CREATE TABLE `core_url_rewrite` (
   CONSTRAINT `FK_CORE_URL_REWRITE_PRODUCT` FOREIGN KEY (`product_id`) REFERENCES `catalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CORE_URL_REWRITE_CATEGORY` FOREIGN KEY (`category_id`) REFERENCES `catalog_category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_CORE_URL_REWRITE_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4245,6 +4293,7 @@ CREATE TABLE `core_url_rewrite` (
 
 LOCK TABLES `core_url_rewrite` WRITE;
 /*!40000 ALTER TABLE `core_url_rewrite` DISABLE KEYS */;
+INSERT INTO `core_url_rewrite` (`url_rewrite_id`, `store_id`, `category_id`, `product_id`, `id_path`, `request_path`, `target_path`, `is_system`, `options`, `description`) VALUES (1,1,NULL,1,'product/1','product.html','catalog/product/view/id/1',1,'',NULL);
 /*!40000 ALTER TABLE `core_url_rewrite` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9298,7 +9347,7 @@ CREATE TABLE `index_event` (
   `new_data` mediumtext,
   PRIMARY KEY (`event_id`),
   UNIQUE KEY `IDX_UNIQUE_EVENT` (`type`,`entity`,`entity_pk`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9312,6 +9361,7 @@ INSERT INTO `index_event` (`event_id`, `type`, `entity`, `entity_pk`, `created_a
 INSERT INTO `index_event` (`event_id`, `type`, `entity`, `entity_pk`, `created_at`, `old_data`, `new_data`) VALUES (3,'mass_action','catalog_product',NULL,'2013-03-07 09:31:04','a:6:{s:41:\"Mage_CatalogInventory_Model_Indexer_Stock\";N;s:38:\"Mage_Catalog_Model_Product_Indexer_Eav\";N;s:40:\"Mage_Catalog_Model_Product_Indexer_Price\";N;s:43:\"Mage_Catalog_Model_Category_Indexer_Product\";N;s:41:\"Mage_CatalogSearch_Model_Indexer_Fulltext\";N;s:30:\"Mage_Tag_Model_Indexer_Summary\";N;}','a:11:{s:35:\"cataloginventory_stock_match_result\";b:1;s:41:\"Mage_CatalogInventory_Model_Indexer_Stock\";N;s:34:\"catalog_product_price_match_result\";b:1;s:40:\"Mage_Catalog_Model_Product_Indexer_Price\";N;s:24:\"catalog_url_match_result\";b:0;s:37:\"catalog_category_product_match_result\";b:1;s:43:\"Mage_Catalog_Model_Category_Indexer_Product\";N;s:35:\"catalogsearch_fulltext_match_result\";b:1;s:41:\"Mage_CatalogSearch_Model_Indexer_Fulltext\";N;s:38:\"Mage_Catalog_Model_Product_Indexer_Eav\";N;s:30:\"Mage_Tag_Model_Indexer_Summary\";N;}');
 INSERT INTO `index_event` (`event_id`, `type`, `entity`, `entity_pk`, `created_at`, `old_data`, `new_data`) VALUES (4,'save','cataloginventory_stock_item',1,'2013-03-07 09:31:04','a:1:{s:41:\"Mage_CatalogInventory_Model_Indexer_Stock\";N;}','a:6:{s:35:\"cataloginventory_stock_match_result\";b:1;s:41:\"Mage_CatalogInventory_Model_Indexer_Stock\";N;s:34:\"catalog_product_price_match_result\";b:0;s:24:\"catalog_url_match_result\";b:0;s:37:\"catalog_category_product_match_result\";b:0;s:35:\"catalogsearch_fulltext_match_result\";b:0;}');
 INSERT INTO `index_event` (`event_id`, `type`, `entity`, `entity_pk`, `created_at`, `old_data`, `new_data`) VALUES (5,'save','catalog_product',1,'2013-03-07 09:31:05','a:7:{s:41:\"Mage_CatalogInventory_Model_Indexer_Stock\";N;s:38:\"Mage_Catalog_Model_Product_Indexer_Eav\";N;s:40:\"Mage_Catalog_Model_Product_Indexer_Price\";N;s:30:\"Mage_Catalog_Model_Indexer_Url\";N;s:43:\"Mage_Catalog_Model_Category_Indexer_Product\";N;s:41:\"Mage_CatalogSearch_Model_Indexer_Fulltext\";N;s:30:\"Mage_Tag_Model_Indexer_Summary\";N;}','a:12:{s:35:\"cataloginventory_stock_match_result\";b:1;s:41:\"Mage_CatalogInventory_Model_Indexer_Stock\";N;s:38:\"Mage_Catalog_Model_Product_Indexer_Eav\";N;s:34:\"catalog_product_price_match_result\";b:1;s:40:\"Mage_Catalog_Model_Product_Indexer_Price\";N;s:24:\"catalog_url_match_result\";b:1;s:30:\"Mage_Catalog_Model_Indexer_Url\";N;s:37:\"catalog_category_product_match_result\";b:1;s:43:\"Mage_Catalog_Model_Category_Indexer_Product\";N;s:35:\"catalogsearch_fulltext_match_result\";b:1;s:41:\"Mage_CatalogSearch_Model_Indexer_Fulltext\";N;s:30:\"Mage_Tag_Model_Indexer_Summary\";N;}');
+INSERT INTO `index_event` (`event_id`, `type`, `entity`, `entity_pk`, `created_at`, `old_data`, `new_data`) VALUES (6,'save','catalog_category',3,'2013-03-07 09:37:13','a:3:{s:30:\"Mage_Catalog_Model_Indexer_Url\";N;s:43:\"Mage_Catalog_Model_Category_Indexer_Product\";N;s:41:\"Mage_CatalogSearch_Model_Indexer_Fulltext\";N;}','a:8:{s:35:\"cataloginventory_stock_match_result\";b:0;s:34:\"catalog_product_price_match_result\";b:0;s:24:\"catalog_url_match_result\";b:1;s:30:\"Mage_Catalog_Model_Indexer_Url\";N;s:37:\"catalog_category_product_match_result\";b:1;s:43:\"Mage_Catalog_Model_Category_Indexer_Product\";N;s:35:\"catalogsearch_fulltext_match_result\";b:1;s:41:\"Mage_CatalogSearch_Model_Indexer_Fulltext\";N;}');
 /*!40000 ALTER TABLE `index_event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9383,14 +9433,17 @@ INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (2
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (3,1,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (3,2,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (3,5,'done');
+INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (3,6,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (6,1,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (6,2,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (6,3,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (6,5,'done');
+INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (6,6,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (7,1,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (7,2,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (7,3,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (7,5,'done');
+INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (7,6,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (8,3,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (8,4,'done');
 INSERT INTO `index_process_event` (`process_id`, `event_id`, `status`) VALUES (8,5,'done');
@@ -9534,6 +9587,21 @@ INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (2,1,'2013-0
 INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (3,1,'2013-03-07 09:29:41');
 INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (4,1,'2013-03-07 09:29:43');
 INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (5,1,'2013-03-07 09:29:57');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (6,1,'2013-03-07 09:34:38');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (7,1,'2013-03-07 09:34:45');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (8,1,'2013-03-07 09:35:43');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (9,1,'2013-03-07 09:35:46');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (10,1,'2013-03-07 09:37:26');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (11,1,'2013-03-07 09:37:30');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (12,1,'2013-03-07 09:37:34');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (13,1,'2013-03-07 09:37:39');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (14,1,'2013-03-07 09:39:14');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (15,1,'2013-03-07 09:39:20');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (16,1,'2013-03-07 09:40:24');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (17,1,'2013-03-07 09:41:05');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (18,1,'2013-03-07 09:41:12');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (19,1,'2013-03-07 09:41:16');
+INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES (20,1,'2013-03-07 09:41:22');
 /*!40000 ALTER TABLE `log_url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9549,7 +9617,7 @@ CREATE TABLE `log_url_info` (
   `url` varchar(255) NOT NULL DEFAULT '',
   `referer` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`url_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Detale information about url visit';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='Detale information about url visit';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9563,6 +9631,21 @@ INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (2,'http://127.0.
 INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (3,'http://127.0.0.60/index.php/customer/account/loginPost/','http://127.0.0.60/index.php/customer/account/login/');
 INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (4,'http://127.0.0.60/index.php/customer/account/','http://127.0.0.60/index.php/customer/account/login/');
 INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (5,'http://127.0.0.60/index.php/sales/order/history/','http://127.0.0.60/index.php/customer/account/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (6,'http://127.0.0.60/index.php/','http://127.0.0.60/index.php/sales/order/history/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (7,'http://127.0.0.60/index.php/catalog/seo_sitemap/category/','http://127.0.0.60/index.php/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (8,'http://127.0.0.60/index.php/catalog/seo_sitemap/category/','http://127.0.0.60/index.php/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (9,'http://127.0.0.60/index.php/','http://127.0.0.60/index.php/catalog/seo_sitemap/category/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (10,'http://127.0.0.60/index.php/','http://127.0.0.60/index.php/catalog/seo_sitemap/category/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (11,'http://127.0.0.60/index.php/catalog/seo_sitemap/category/','http://127.0.0.60/index.php/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (12,'http://127.0.0.60/index.php/catalog/seo_sitemap/product/','http://127.0.0.60/index.php/catalog/seo_sitemap/category/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (13,'http://127.0.0.60/index.php/catalog/product/view/id/1','http://127.0.0.60/index.php/catalog/seo_sitemap/product/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (14,'http://127.0.0.60/index.php/catalog/product/view/id/1','http://127.0.0.60/index.php/catalog/seo_sitemap/product/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (15,'http://127.0.0.60/index.php/catalog/product/view/id/1','http://127.0.0.60/index.php/catalog/seo_sitemap/product/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (16,'http://127.0.0.60/index.php/catalog/product/view/id/1','http://127.0.0.60/index.php/catalog/seo_sitemap/product/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (17,'http://127.0.0.60/index.php/catalog/product/view/id/1','http://127.0.0.60/index.php/catalog/seo_sitemap/product/');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (18,'http://127.0.0.60/index.php/checkout/cart/add/uenc/aHR0cDovLzEyNy4wLjAuNjAvaW5kZXgucGhwL3Byb2R1Y3QuaHRtbA,,/product/1/','http://127.0.0.60/index.php/product.html');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (19,'http://127.0.0.60/index.php/checkout/cart/','http://127.0.0.60/index.php/product.html');
+INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES (20,'http://127.0.0.60/index.php/checkout/onepage/','http://127.0.0.60/index.php/checkout/cart/');
 /*!40000 ALTER TABLE `log_url_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9590,7 +9673,7 @@ CREATE TABLE `log_visitor` (
 
 LOCK TABLES `log_visitor` WRITE;
 /*!40000 ALTER TABLE `log_visitor` DISABLE KEYS */;
-INSERT INTO `log_visitor` (`visitor_id`, `session_id`, `first_visit_at`, `last_visit_at`, `last_url_id`, `store_id`) VALUES (1,'nltqb2bssg4g0hg615i45i1ud0','2013-03-07 09:28:25','2013-03-07 09:29:57',5,1);
+INSERT INTO `log_visitor` (`visitor_id`, `session_id`, `first_visit_at`, `last_visit_at`, `last_url_id`, `store_id`) VALUES (1,'nltqb2bssg4g0hg615i45i1ud0','2013-03-07 09:28:25','2013-03-07 09:41:22',20,1);
 /*!40000 ALTER TABLE `log_visitor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10460,7 +10543,7 @@ CREATE TABLE `report_event` (
   KEY `FK_REPORT_EVENT_STORE` (`store_id`),
   CONSTRAINT `FK_REPORT_EVENT_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_REPORT_EVENT_TYPE` FOREIGN KEY (`event_type_id`) REFERENCES `report_event_types` (`event_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10469,6 +10552,12 @@ CREATE TABLE `report_event` (
 
 LOCK TABLES `report_event` WRITE;
 /*!40000 ALTER TABLE `report_event` DISABLE KEYS */;
+INSERT INTO `report_event` (`event_id`, `logged_at`, `event_type_id`, `object_id`, `subject_id`, `subtype`, `store_id`) VALUES (1,'2013-03-07 09:37:37',1,1,155,0,1);
+INSERT INTO `report_event` (`event_id`, `logged_at`, `event_type_id`, `object_id`, `subject_id`, `subtype`, `store_id`) VALUES (2,'2013-03-07 09:39:13',1,1,155,0,1);
+INSERT INTO `report_event` (`event_id`, `logged_at`, `event_type_id`, `object_id`, `subject_id`, `subtype`, `store_id`) VALUES (3,'2013-03-07 09:39:19',1,1,155,0,1);
+INSERT INTO `report_event` (`event_id`, `logged_at`, `event_type_id`, `object_id`, `subject_id`, `subtype`, `store_id`) VALUES (4,'2013-03-07 09:40:23',1,1,155,0,1);
+INSERT INTO `report_event` (`event_id`, `logged_at`, `event_type_id`, `object_id`, `subject_id`, `subtype`, `store_id`) VALUES (5,'2013-03-07 09:41:05',1,1,155,0,1);
+INSERT INTO `report_event` (`event_id`, `logged_at`, `event_type_id`, `object_id`, `subject_id`, `subtype`, `store_id`) VALUES (6,'2013-03-07 09:41:12',4,1,155,0,1);
 /*!40000 ALTER TABLE `report_event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10525,7 +10614,7 @@ CREATE TABLE `report_viewed_product_index` (
   CONSTRAINT `FK_REPORT_VIEWED_PRODUCT_INDEX_CUSTOMER` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_REPORT_VIEWED_PRODUCT_INDEX_PRODUCT` FOREIGN KEY (`product_id`) REFERENCES `catalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_REPORT_VIEWED_PRODUCT_INDEX_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10534,6 +10623,7 @@ CREATE TABLE `report_viewed_product_index` (
 
 LOCK TABLES `report_viewed_product_index` WRITE;
 /*!40000 ALTER TABLE `report_viewed_product_index` DISABLE KEYS */;
+INSERT INTO `report_viewed_product_index` (`index_id`, `visitor_id`, `customer_id`, `product_id`, `store_id`, `added_at`) VALUES (1,1,155,1,1,'2013-03-07 09:41:05');
 /*!40000 ALTER TABLE `report_viewed_product_index` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11848,7 +11938,7 @@ CREATE TABLE `sales_flat_quote` (
 
 LOCK TABLES `sales_flat_quote` WRITE;
 /*!40000 ALTER TABLE `sales_flat_quote` DISABLE KEYS */;
-INSERT INTO `sales_flat_quote` (`entity_id`, `store_id`, `created_at`, `updated_at`, `converted_at`, `is_active`, `is_virtual`, `is_multi_shipping`, `items_count`, `items_qty`, `orig_order_id`, `store_to_base_rate`, `store_to_quote_rate`, `base_currency_code`, `store_currency_code`, `quote_currency_code`, `grand_total`, `base_grand_total`, `checkout_method`, `customer_id`, `customer_tax_class_id`, `customer_group_id`, `customer_email`, `customer_prefix`, `customer_firstname`, `customer_middlename`, `customer_lastname`, `customer_suffix`, `customer_dob`, `customer_note`, `customer_note_notify`, `customer_is_guest`, `remote_ip`, `applied_rule_ids`, `reserved_order_id`, `password_hash`, `coupon_code`, `global_currency_code`, `base_to_global_rate`, `base_to_quote_rate`, `customer_taxvat`, `customer_gender`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `is_changed`, `trigger_recollect`, `ext_shipping_info`, `gift_message_id`) VALUES (1,1,'2013-03-07 09:29:41','2013-03-07 09:29:41','0000-00-00 00:00:00',1,0,0,0,0.0000,0,1.0000,1.0000,'USD','USD','USD',0.0000,0.0000,NULL,155,3,1,'nfxpnk+final155@gmail.com','Prefix','First Name','Middle Name/Initial','Last Name','Suffix','1984-03-01 00:00:00',NULL,1,0,'127.0.0.1',NULL,'',NULL,NULL,'USD',1.0000,1.0000,'Tax/VAT Number','1',NULL,NULL,NULL,NULL,1,0,NULL,NULL);
+INSERT INTO `sales_flat_quote` (`entity_id`, `store_id`, `created_at`, `updated_at`, `converted_at`, `is_active`, `is_virtual`, `is_multi_shipping`, `items_count`, `items_qty`, `orig_order_id`, `store_to_base_rate`, `store_to_quote_rate`, `base_currency_code`, `store_currency_code`, `quote_currency_code`, `grand_total`, `base_grand_total`, `checkout_method`, `customer_id`, `customer_tax_class_id`, `customer_group_id`, `customer_email`, `customer_prefix`, `customer_firstname`, `customer_middlename`, `customer_lastname`, `customer_suffix`, `customer_dob`, `customer_note`, `customer_note_notify`, `customer_is_guest`, `remote_ip`, `applied_rule_ids`, `reserved_order_id`, `password_hash`, `coupon_code`, `global_currency_code`, `base_to_global_rate`, `base_to_quote_rate`, `customer_taxvat`, `customer_gender`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `is_changed`, `trigger_recollect`, `ext_shipping_info`, `gift_message_id`) VALUES (1,1,'2013-03-07 09:29:41','2013-03-07 09:41:21','0000-00-00 00:00:00',1,0,0,1,10.0000,0,1.0000,1.0000,'USD','USD','USD',1000.0000,1000.0000,'',155,3,1,'nfxpnk+final155@gmail.com','Prefix','First Name','Middle Name/Initial','Last Name','Suffix','1984-03-01 00:00:00',NULL,1,0,'127.0.0.1','','',NULL,NULL,'USD',1.0000,1.0000,'Tax/VAT Number','1',1000.0000,1000.0000,1000.0000,1000.0000,1,0,NULL,NULL);
 /*!40000 ALTER TABLE `sales_flat_quote` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11920,7 +12010,7 @@ CREATE TABLE `sales_flat_quote_address` (
   PRIMARY KEY (`address_id`),
   KEY `FK_SALES_QUOTE_ADDRESS_SALES_QUOTE` (`quote_id`),
   CONSTRAINT `FK_SALES_QUOTE_ADDRESS_SALES_QUOTE` FOREIGN KEY (`quote_id`) REFERENCES `sales_flat_quote` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11929,6 +12019,8 @@ CREATE TABLE `sales_flat_quote_address` (
 
 LOCK TABLES `sales_flat_quote_address` WRITE;
 /*!40000 ALTER TABLE `sales_flat_quote_address` DISABLE KEYS */;
+INSERT INTO `sales_flat_quote_address` (`address_id`, `quote_id`, `created_at`, `updated_at`, `customer_id`, `save_in_address_book`, `customer_address_id`, `address_type`, `email`, `prefix`, `firstname`, `middlename`, `lastname`, `suffix`, `company`, `street`, `city`, `region`, `region_id`, `postcode`, `country_id`, `telephone`, `fax`, `same_as_billing`, `free_shipping`, `collect_shipping_rates`, `shipping_method`, `shipping_description`, `weight`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `tax_amount`, `base_tax_amount`, `shipping_amount`, `base_shipping_amount`, `shipping_tax_amount`, `base_shipping_tax_amount`, `discount_amount`, `base_discount_amount`, `grand_total`, `base_grand_total`, `customer_notes`, `applied_taxes`, `discount_description`, `shipping_discount_amount`, `base_shipping_discount_amount`, `subtotal_incl_tax`, `base_subtotal_total_incl_tax`, `gift_message_id`, `hidden_tax_amount`, `base_hidden_tax_amount`, `shipping_hidden_tax_amount`, `base_shipping_hidden_tax_amount`, `shipping_incl_tax`, `base_shipping_incl_tax`) VALUES (3,1,'2013-03-07 09:41:14','2013-03-07 09:41:21',155,0,155,'billing','nfxpnk+final155@gmail.com','Prefix','First Name','Middle Name/Initial','Last Name','Suffix','Company','Street Address #1\nStreet Address #2','City','State/Province',NULL,'Zip/Postal Code','UA','Telephone','Fax',0,0,0,'','',0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,NULL,'a:0:{}',NULL,NULL,NULL,0.0000,NULL,NULL,NULL,NULL,NULL,NULL,0.0000,0.0000);
+INSERT INTO `sales_flat_quote_address` (`address_id`, `quote_id`, `created_at`, `updated_at`, `customer_id`, `save_in_address_book`, `customer_address_id`, `address_type`, `email`, `prefix`, `firstname`, `middlename`, `lastname`, `suffix`, `company`, `street`, `city`, `region`, `region_id`, `postcode`, `country_id`, `telephone`, `fax`, `same_as_billing`, `free_shipping`, `collect_shipping_rates`, `shipping_method`, `shipping_description`, `weight`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `tax_amount`, `base_tax_amount`, `shipping_amount`, `base_shipping_amount`, `shipping_tax_amount`, `base_shipping_tax_amount`, `discount_amount`, `base_discount_amount`, `grand_total`, `base_grand_total`, `customer_notes`, `applied_taxes`, `discount_description`, `shipping_discount_amount`, `base_shipping_discount_amount`, `subtotal_incl_tax`, `base_subtotal_total_incl_tax`, `gift_message_id`, `hidden_tax_amount`, `base_hidden_tax_amount`, `shipping_hidden_tax_amount`, `base_shipping_hidden_tax_amount`, `shipping_incl_tax`, `base_shipping_incl_tax`) VALUES (4,1,'2013-03-07 09:41:14','2013-03-07 09:41:21',155,0,NULL,'shipping',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,'','',1000.0000,1000.0000,1000.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1000.0000,1000.0000,NULL,'a:0:{}','',0.0000,0.0000,1000.0000,NULL,NULL,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000);
 /*!40000 ALTER TABLE `sales_flat_quote_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12069,7 +12161,7 @@ CREATE TABLE `sales_flat_quote_item` (
   CONSTRAINT `FK_SALES_QUOTE_ITEM_CATALOG_PRODUCT_ENTITY` FOREIGN KEY (`product_id`) REFERENCES `catalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_SALES_QUOTE_ITEM_SALES_QUOTE` FOREIGN KEY (`quote_id`) REFERENCES `sales_flat_quote` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_SALES_QUOTE_ITEM_STORE` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12078,6 +12170,7 @@ CREATE TABLE `sales_flat_quote_item` (
 
 LOCK TABLES `sales_flat_quote_item` WRITE;
 /*!40000 ALTER TABLE `sales_flat_quote_item` DISABLE KEYS */;
+INSERT INTO `sales_flat_quote_item` (`item_id`, `quote_id`, `created_at`, `updated_at`, `product_id`, `store_id`, `parent_item_id`, `is_virtual`, `sku`, `name`, `description`, `applied_rule_ids`, `additional_data`, `free_shipping`, `is_qty_decimal`, `no_discount`, `weight`, `qty`, `price`, `base_price`, `custom_price`, `discount_percent`, `discount_amount`, `base_discount_amount`, `tax_percent`, `tax_amount`, `base_tax_amount`, `row_total`, `base_row_total`, `row_total_with_discount`, `row_weight`, `product_type`, `base_tax_before_discount`, `tax_before_discount`, `original_custom_price`, `redirect_url`, `base_cost`, `price_incl_tax`, `base_price_incl_tax`, `row_total_incl_tax`, `base_row_total_incl_tax`, `gift_message_id`, `weee_tax_applied`, `weee_tax_applied_amount`, `weee_tax_applied_row_amount`, `base_weee_tax_applied_amount`, `base_weee_tax_applied_row_amount`, `weee_tax_disposition`, `weee_tax_row_disposition`, `base_weee_tax_disposition`, `base_weee_tax_row_disposition`, `hidden_tax_amount`, `base_hidden_tax_amount`) VALUES (1,1,'2013-03-07 09:41:12','2013-03-07 09:41:12',1,1,NULL,0,'test','Product',NULL,'',NULL,0,0,0,100.0000,10.0000,100.0000,100.0000,NULL,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1000.0000,1000.0000,0.0000,1000.0000,'simple',NULL,NULL,NULL,NULL,NULL,100.0000,100.0000,1000.0000,1000.0000,NULL,'a:0:{}',0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000);
 /*!40000 ALTER TABLE `sales_flat_quote_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12097,7 +12190,7 @@ CREATE TABLE `sales_flat_quote_item_option` (
   PRIMARY KEY (`option_id`),
   KEY `FK_SALES_QUOTE_ITEM_OPTION_ITEM_ID` (`item_id`),
   CONSTRAINT `FK_SALES_QUOTE_ITEM_OPTION_ITEM_ID` FOREIGN KEY (`item_id`) REFERENCES `sales_flat_quote_item` (`item_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Additional options for quote item';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Additional options for quote item';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12106,6 +12199,7 @@ CREATE TABLE `sales_flat_quote_item_option` (
 
 LOCK TABLES `sales_flat_quote_item_option` WRITE;
 /*!40000 ALTER TABLE `sales_flat_quote_item_option` DISABLE KEYS */;
+INSERT INTO `sales_flat_quote_item_option` (`option_id`, `item_id`, `product_id`, `code`, `value`) VALUES (1,1,1,'info_buyRequest','a:4:{s:4:\"uenc\";s:56:\"aHR0cDovLzEyNy4wLjAuNjAvaW5kZXgucGhwL3Byb2R1Y3QuaHRtbA,,\";s:7:\"product\";s:1:\"1\";s:15:\"related_product\";s:0:\"\";s:3:\"qty\";s:2:\"10\";}');
 /*!40000 ALTER TABLE `sales_flat_quote_item_option` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12145,7 +12239,7 @@ CREATE TABLE `sales_flat_quote_payment` (
   PRIMARY KEY (`payment_id`),
   KEY `FK_SALES_QUOTE_PAYMENT_SALES_QUOTE` (`quote_id`),
   CONSTRAINT `FK_SALES_QUOTE_PAYMENT_SALES_QUOTE` FOREIGN KEY (`quote_id`) REFERENCES `sales_flat_quote` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12154,6 +12248,7 @@ CREATE TABLE `sales_flat_quote_payment` (
 
 LOCK TABLES `sales_flat_quote_payment` WRITE;
 /*!40000 ALTER TABLE `sales_flat_quote_payment` DISABLE KEYS */;
+INSERT INTO `sales_flat_quote_payment` (`payment_id`, `quote_id`, `created_at`, `updated_at`, `method`, `cc_type`, `cc_number_enc`, `cc_last4`, `cc_cid_enc`, `cc_owner`, `cc_exp_month`, `cc_exp_year`, `cc_ss_owner`, `cc_ss_start_month`, `cc_ss_start_year`, `cybersource_token`, `paypal_correlation_id`, `paypal_payer_id`, `paypal_payer_status`, `po_number`, `additional_data`, `cc_ss_issue`, `additional_information`, `ideal_issuer_id`, `ideal_issuer_list`) VALUES (1,1,'2013-03-07 09:41:21','2013-03-07 09:41:21','','','','','','',0,0,'',0,0,'','','','','',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `sales_flat_quote_payment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -13619,4 +13714,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-07 11:31:33
+-- Dump completed on 2013-03-07 11:42:25
